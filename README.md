@@ -25,7 +25,7 @@ The notebook runs through both approaches end to end and finishes with a head-to
 
 ## Data
 
-The notebook is built around 23 `.txt` transcripts of CS 639 lectures. Those transcripts aren't included in this repo, since they're transcribed course lecture content rather than something I'm able to redistribute. The code that cleans, chunks, and indexes them is all here and works on any similarly formatted set of transcripts (or with light changes, any text corpus split into per-document `.txt` files) — running it end to end just requires supplying your own.
+The notebook is built around 23 `.txt` transcripts of CS 639 lectures. Those transcripts aren't included in this repo, since they're transcribed course lecture content rather than something I'm able to redistribute. The code that cleans, chunks, and indexes them is all here, and would work on any similarly formatted set of transcripts (or with light changes, any text corpus split into per-document `.txt` files).
 
 The 925 synthesized question-answer pairs used for fine-tuning, generated from those transcripts by the teacher model, aren't included either, for the same reason: they're derived directly from the lecture content.
 
@@ -37,13 +37,11 @@ The 925 synthesized question-answer pairs used for fine-tuning, generated from t
 
 **Section 3 — A RAG-based exam-prep chatbot.** Indexes the transcripts into Elasticsearch two different ways (fixed-size token windows and sentence-grouped chunks), compares retrieval precision between them, then builds a RAG pipeline with Haystack and deploys it as a Streamlit chat app. The notebook closes with a direct comparison of the fine-tuned model against RAG on the same set of test prompts.
 
-## How to run
+## Environment
 
-Sections 1 and 2 need a GPU. A free Colab T4 session is enough for both the quantized inference and the LoRA fine-tuning, and you'll need a HuggingFace account with access to the gated `Llama-3.2-1B-Instruct` model.
+Sections 1 and 2 need a GPU (a free Colab T4 session is enough) and a HuggingFace account with access to the gated `Llama-3.2-1B-Instruct` model. Section 3 doesn't need a GPU, but does need an Elastic Cloud account and a HuggingFace API token, since generation goes through HuggingFace's hosted inference API rather than a locally loaded model.
 
-Section 3 doesn't need a GPU, but it does need an Elastic Cloud account (a free trial works) and a HuggingFace API token, since generation goes through HuggingFace's hosted inference API rather than a locally loaded model.
-
-Since the lecture transcripts aren't included, running the notebook end to end means pointing it at your own set of `.txt` transcripts (or another text corpus) — the cleaning, chunking, and indexing code will work on it as-is. Without any transcripts supplied, the notebook still documents the full approach and shows the original results in each cell's output.
+Since the lecture transcripts aren't included, this repo isn't meant to be cloned and run end to end — it's meant to be read, with the code and its original results both visible directly in the notebook.
 
 ```bash
 pip install -r requirements.txt
