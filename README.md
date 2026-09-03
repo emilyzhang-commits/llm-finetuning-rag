@@ -1,4 +1,4 @@
-# Fine-Tuning vs. RAG for Domain-Specific Q&A
+# Fine-Tuning vs. RAG for a Domain-Specific AI Assistant
 
 This project compares two different ways to turn a small open-source LLM into a chatbot that can answer questions about a specific course (CS 639, Data Management for Data Science, at UW-Madison): fine-tuning the model directly on course material, and Retrieval-Augmented Generation (RAG), which instead retrieves relevant content at query time and hands it to the model as context.
 
