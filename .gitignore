@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+.ipynb_checkpoints/
+transcripts/
+transcripts.zip
+qa_pairs.json

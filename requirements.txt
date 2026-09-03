@@ -1,0 +1,13 @@
+torch
+bitsandbytes>=0.39.0
+accelerate
+transformers
+datasets
+peft
+trl
+streamlit
+nltk
+sentence-transformers
+chromadb
+haystack-ai
+elasticsearch-haystack
