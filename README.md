@@ -17,11 +17,11 @@ The notebook runs through both approaches end to end and finishes with a head-to
 
 ## Repo structure
 
-```
-fine_tuning_and_rag_chatbot.ipynb   the full notebook: fine-tuning, RAG, and the comparison
-images/streamlit_chatbot.png        screenshot of the deployed chat app
-requirements.txt
-```
+| File | Description |
+|---|---|
+| `fine_tuning_and_rag_chatbot.ipynb` | The full notebook: fine-tuning, RAG, and the comparison |
+| `images/streamlit_chatbot.png` | Screenshot of the deployed chat app |
+| `requirements.txt` | Python dependencies |
 
 ## Data
 
