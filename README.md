@@ -1,4 +1,4 @@
-# Fine-Tuning and RAG for a Course Exam-Prep Chatbot
+# Fine-Tuning vs. RAG for Domain-Specific Q&A
 
 This project compares two different ways to turn a small open-source LLM into a chatbot that can answer questions about a specific course (CS 639, Data Management for Data Science, at UW-Madison): fine-tuning the model directly on course material, and Retrieval-Augmented Generation (RAG), which instead retrieves relevant content at query time and hands it to the model as context.
 
@@ -35,7 +35,7 @@ The 925 synthesized question-answer pairs used for fine-tuning, generated from t
 
 **Section 2 — Fine-tuning on lecture transcripts.** Cleans and chunks the transcripts, uses Qwen2.5-7B-Instruct to synthesize exam-style QA pairs from each chunk, and fine-tunes the Llama model on those pairs with LoRA. The fine-tune is evaluated two ways: qualitatively, by comparing the base and fine-tuned model's answers to the same course questions, and quantitatively, by comparing perplexity on a held-out test set.
 
-**Section 3 — A RAG-based exam-prep chatbot.** Indexes the transcripts into Elasticsearch two different ways (fixed-size token windows and sentence-grouped chunks), compares retrieval precision between them, then builds a RAG pipeline with Haystack and deploys it as a Streamlit chat app. The notebook closes with a direct comparison of the fine-tuned model against RAG on the same set of test prompts.
+**Section 3 — A RAG-based Q&A chatbot.** Indexes the transcripts into Elasticsearch two different ways (fixed-size token windows and sentence-grouped chunks), compares retrieval precision between them, then builds a RAG pipeline with Haystack and deploys it as a Streamlit chat app. The notebook closes with a direct comparison of the fine-tuned model against RAG on the same set of test prompts.
 
 ## Environment
 
